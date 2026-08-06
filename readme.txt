@@ -21,8 +21,11 @@ Features
 - Loads domain VTU PointData (`value`) as NumPy arrays
 - Interactive mesh visualization with PyVista, including group indices
 - Volume integrals over a 3D domain
-- Diffusive surface integrals on 2D boundaries or interfaces
+- Diffusive surface integrals on 2D boundaries or interfaces (see warning below)
 - Advective surface integrals on 2D boundaries or interfaces
+
+Warning: Diffusive fluxes are estimated by reconstructing gradients from adjacent elements' nodal values.
+The computed diffusive fluxes are NOT NECESSARILY CONSERVATIVE given the nature of P1 FEM.
 
 Requirements
 ------------

@@ -18,9 +18,10 @@ H_v0 = calc.volint_scl_src(0, lambda T: -(200.0 + 0.5 * T), T_v0)  # returns flo
 # H_v0 = calc.volint_scl_src(0, -200.0, T_v0)  # returns float64
 print(H_v0)
 
-# diffusive surface integral (-k * grad(T) . n dS); n is outward unit normal
+# diffusive surface integral (-k * grad(T) . n dl); n is outward unit normal
 # arguments: boundary or interface index, diffusivity (float or callable), scalar field
 # should work even if the diffusivity is constant
+# WARNING: diffusive fluxes are not necessarily conservative (see readme.txt).
 q_s1 = calc.surfint_scl_diff(1, lambda T: 0.1 + 0.3 * T, T_v0)  # returns float64
 # q_s1 = calc.surfint_scl_diff(1, 0.1, T_v0)  # returns float64
 print(q_s1)
